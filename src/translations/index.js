@@ -12,7 +12,7 @@ const languageDetector = {
     const language = await AsyncStorage.getItem('preferred-language');
     console.log(language);
     if (!language) {
-      //If no data found, the current device language is saved
+      // If no data is found, current device language is saved as default
       const lang = RNLocalize.getLocales()[0].languageCode;
       return callback(lang);
     }
@@ -31,7 +31,7 @@ i18next
   .init({
     fallbackLng: 'en',
     compatibilityJSON: 'v3',
-    resources: {
+    resources: {//Adding the available languages
       en: en,
       es: es,
     },
